@@ -1,0 +1,74 @@
+﻿[
+  {
+    "id": 1,
+    "name": "BTS Love Yourself Hoodie",
+    "price": 3499,
+    "pic_path": "https://ih1.redbubble.net/image.265415896.9503/pencil_skirt,x1000,front-c,468,0,701,935-bg,f8f8f8.u1.jpg",
+    "description": "Stay warm and stylish with this BTS hoodie from their Map of the Soul Tour. Made from high-quality cotton and available in multiple sizes.",
+    "material": "Cotton",
+    "size": "S, M, L, XL",
+    "availability": true,
+    "comeback": "Map of the Soul: 7",
+    "category": "clothes"
+  },
+  {
+    "id": 2,
+    "name": "BLACKPINK KLT T-Shirt",
+    "price": 999,
+    "pic_path": "/images/blackpink_tshirt.jpg",
+    "description": "Show your love for BLACKPINK with this trendy Kill This Love T-Shirt. Made from comfortable cotton and available in multiple sizes.",
+    "material": "Cotton",
+    "size": "S, M, L",
+    "availability": true,
+    "comeback": "Kill This Love",
+    "category": "clothes"
+  },
+  {
+    "id": 3,
+    "name": "TWICE Eyes Wide Open Album",
+    "price": 2499,
+    "pic_path": "/images/twice_album.jpg",
+    "description": "Get your hands on the latest album from TWICE, Eyes Wide Open! Includes hit tracks like 'I Can't Stop Me' and 'More & More'.",
+    "material": "",
+    "size": "",
+    "availability": true,
+    "comeback": "Eyes Wide Open",
+    "category": "album"
+  },
+  {
+    "id": 4,
+    "name": "EXO Obsession Lightstick",
+    "price": 1499,
+    "pic_path": "/images/exo_lightstick.jpg",
+    "description": "Complete your EXO collection with the Obsession lightstick. Features multiple lighting modes and a sleek design.",
+    "material": "",
+    "size": "",
+    "availability": true,
+    "comeback": "Obsession",
+    "category": "lightstick"
+  },
+  {
+    "id": 5,
+    "name": "Red Velvet Psycho Album",
+    "price": 1999,
+    "pic_path": "/images/redvelvet_album.jpg",
+    "description": "Don't miss out on Red Velvet's latest album, Psycho! Includes hit tracks like 'Psycho' and 'In & Out'.",
+    "material": "",
+    "size": "",
+    "availability": true,
+    "comeback": "Psycho",
+    "category": "album"
+  },
+  {
+    "id": 6,
+    "name": "ATEEZ Treasure EP.1: All to Zero Album",
+    "price": 1799,
+    "pic_path": "/images/ateez_album.jpg",
+    "description": "Discover ATEEZ's debut album, Treasure EP.1: All to Zero. Includes hit tracks like 'Pirate King' and 'Treasure'.",
+    "material": "",
+    "size": "",
+    "availability": true,
+    "comeback": "N/A",
+    "category": "album"
+  }
+]

@@ -1,0 +1,35 @@
+﻿@using antifragile.ViewModels
+
+
+<div class="d-flex flex-row" style="margin: 15px">
+    <ul class="list-group" style="width: 200px; margin-right: 10%">
+        <li class="list-group-item">
+            <a asp-controller="Catalog" asp-action="Index" asp-route-category="">Все товары</a>
+        </li>
+        <li class="list-group-item">
+            <a asp-controller="Catalog" asp-action="Index" asp-route-category="album">альбомы</a>
+        </li>
+        <li class="list-group-item">
+            <a asp-controller="Catalog" asp-action="Index" asp-route-category="pack">K-POP паки</a>
+        </li>
+        <li class="list-group-item">
+            <a asp-controller="Catalog" asp-action="Index" asp-route-category="box">K-POP box'ы</a>
+        </li>
+        <li class="list-group-item">
+            <a asp-controller="Catalog" asp-action="Index" asp-route-category="pack">Карточки</a>
+        </li>
+        <li class="list-group-item">
+            <a asp-controller="Catalog" asp-action="Index" asp-route-category="clothes">Одежда</a>
+        </li>
+        <li class="list-group-item">
+            <a asp-controller="Catalog" asp-action="Index" asp-route-category="lightstick">Лайтстики</a>
+        </li>
+    </ul>
+    <div class="d-flex row flex-wrap">
+        @foreach (Product prod in Model.allProducts)
+            {
+                @Html.Partial("ProductCard", prod)
+            }
+    </div>
+    
+</div>
