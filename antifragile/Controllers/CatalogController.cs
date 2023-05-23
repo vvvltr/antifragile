@@ -13,30 +13,53 @@ public class CatalogController : Controller
     {
         _products = products;
     }
-    // GET
-    [HttpGet("Catalog/")]
+    
     [HttpGet("Catalog/{category?}")]
-    public IActionResult Index(string category)
+    [HttpGet("Catalog/{category?}/{filter?}")]
+    [HttpGet("Catalog/{filter?}/{category}")]
+    public IActionResult Index(string author, string category)
     {
         IEnumerable<Product> prods = new List<Product>();
-        string currCat = "";
-        if (string.IsNullOrEmpty(category))
-        {
-            prods = _products.AllProducts;
-        }
-        else
-        {
-            prods = _products.ProductsOfCategory(category);
-        }
-
-        currCat = category;
+        
+        prods = SortByCategory(category);
+        prods = SortByAuthor(author, prods);
+        
+        
         var prodViewMod = new ProductsViewModel()
         {
             allProducts = prods,
-            currentCategory = currCat
         };
 
         return View(prodViewMod);
     }
 
+    public IEnumerable<Product> SortByCategory(string category)
+    {
+        if (string.IsNullOrEmpty(category))
+        {
+            return _products.AllProducts;
+        }
+        else
+        {
+            return _products.ProductsOfCategory(category);
+        }
+    }
+
+    public IEnumerable<Product> SortByAuthor(string author, IEnumerable<Product> prods)
+    {
+        if (string.IsNullOrEmpty(author)==false)
+        {
+            var temp = new List<Product>();
+            foreach (var VARIABLE in prods)
+            {
+                if (VARIABLE.Name.Contains(author))
+                {
+                    temp.Add(VARIABLE);
+                }
+            }
+            prods = temp;
+        }
+
+        return prods;
+    }
 }

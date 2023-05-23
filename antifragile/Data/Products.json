@@ -70,5 +70,29 @@
     "availability": true,
     "comeback": "N/A",
     "category": "album"
+  },
+  {
+    "id": 15,
+    "name": "BTS Love Yourself: Answer Album",
+    "price": 2199,
+    "pic_path": "/images/bts_album.jpg",
+    "description": "Add the final piece to your BTS Love Yourself collection with the Answer album! Includes hit tracks like 'IDOL' and 'Answer: Love Myself'.",
+    "material": "",
+    "size": "",
+    "availability": true,
+    "comeback": "Love Yourself: Answer",
+    "category": "album"
+  },
+  {
+    "id": 14,
+    "name": "EXO The War: The Power of Music Album",
+    "price": 1999,
+    "pic_path": "/images/exo_album.jpg",
+    "description": "Relive the magic of EXO's The War: The Power of Music album! Includes hit tracks like 'Ko Ko Bop' and 'Power'.",
+    "material": "",
+    "size": "",
+    "availability": true,
+    "comeback": "The War: The Power of Music",
+    "category": "album"
   }
 ]

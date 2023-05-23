@@ -1,35 +1,49 @@
 ﻿@using antifragile.ViewModels
 
-
-<div class="d-flex flex-row" style="margin: 15px">
-    <ul class="list-group" style="width: 200px; margin-right: 10%">
-        <li class="list-group-item">
-            <a asp-controller="Catalog" asp-action="Index" asp-route-category="">Все товары</a>
-        </li>
-        <li class="list-group-item">
-            <a asp-controller="Catalog" asp-action="Index" asp-route-category="album">альбомы</a>
-        </li>
-        <li class="list-group-item">
-            <a asp-controller="Catalog" asp-action="Index" asp-route-category="pack">K-POP паки</a>
-        </li>
-        <li class="list-group-item">
-            <a asp-controller="Catalog" asp-action="Index" asp-route-category="box">K-POP box'ы</a>
-        </li>
-        <li class="list-group-item">
-            <a asp-controller="Catalog" asp-action="Index" asp-route-category="pack">Карточки</a>
-        </li>
-        <li class="list-group-item">
-            <a asp-controller="Catalog" asp-action="Index" asp-route-category="clothes">Одежда</a>
-        </li>
-        <li class="list-group-item">
-            <a asp-controller="Catalog" asp-action="Index" asp-route-category="lightstick">Лайтстики</a>
-        </li>
-    </ul>
-    <div class="d-flex row flex-wrap">
-        @foreach (Product prod in Model.allProducts)
+<div class="d-flex flex-column">
+    <div class="d-flex justify-content-between">
+        <h1>Каталог</h1>
+        <div class="d-flex flex-row p-5">
+            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Фильтр</a>
+            <div class="dropdown-menu show" aria-labelledby="dropdown01">                        
+                <a class="dropdown-item" asp-controller="Catalog" asp-action="Index" asp-route-author="">Все исполнители</a>
+                <a class="dropdown-item" asp-controller="Catalog" asp-action="Index" asp-route-author="EXO">EXO</a>
+                <a class="dropdown-item" asp-controller="Catalog" asp-action="Index" asp-route-author="BTS">BTS</a>
+                <a class="dropdown-item" asp-controller="Catalog" asp-action="Index" asp-route-author="TWICE">Twice</a>
+                <a class="dropdown-item" asp-controller="Catalog" asp-action="Index" asp-route-author="BLACKPINK">BLACKPINK</a>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-row" style="margin: 15px">
+        <ul class="list-group" style="width: 200px; margin-right: 10%">
+            <li class="list-group-item">
+                <a asp-controller="Catalog" asp-action="Index" asp-route-category="">Все товары</a>
+            </li>
+            <li class="list-group-item">
+                <a asp-controller="Catalog" asp-action="Index" asp-route-category="album">альбомы</a>
+            </li>
+            <li class="list-group-item">
+                <a asp-controller="Catalog" asp-action="Index" asp-route-category="pack">K-POP паки</a>
+            </li>
+            <li class="list-group-item">
+                <a asp-controller="Catalog" asp-action="Index" asp-route-category="box">K-POP box'ы</a>
+            </li>
+            <li class="list-group-item">
+                <a asp-controller="Catalog" asp-action="Index" asp-route-category="pack">Карточки</a>
+            </li>
+            <li class="list-group-item">
+                <a asp-controller="Catalog" asp-action="Index" asp-route-category="clothes">Одежда</a>
+            </li>
+            <li class="list-group-item">
+                <a asp-controller="Catalog" asp-action="Index" asp-route-category="lightstick">Лайтстики</a>
+            </li>
+        </ul>
+        <div class="d-flex row flex-wrap">
+            @foreach (Product prod in Model.allProducts)
             {
                 @Html.Partial("ProductCard", prod)
             }
+        </div>
     </div>
-    
 </div>
+

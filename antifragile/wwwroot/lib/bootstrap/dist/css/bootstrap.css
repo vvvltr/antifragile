@@ -56,6 +56,10 @@
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
   --bs-body-bg: #fff;
+  --orange-prim: #FD7A53;
+  --orange-prim-rgb: rgba(253, 122, 83, 1);
+  --gray-prime: #F5F5F5;
+  --gray-prime-rgb: rgba(245, 245, 245, 1);
 }
 
 *,
@@ -7740,7 +7744,7 @@ textarea.form-control-lg {
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--orange-prim-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-secondary {

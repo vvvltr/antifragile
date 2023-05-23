@@ -1,2 +1,16 @@
-﻿{
-}
+﻿[
+  {
+    "id": 1,
+    "name": "vltr",
+    "password": "123",
+    "phone_num": "89279994043",
+    "email": "vltr@ya.ru"
+  },
+  {
+    "id": 2,
+    "name": "vltr",
+    "password": "123",
+    "phone_num": "89279994043",
+    "email": "vltr@ya.ru"
+  }
+]

@@ -22,7 +22,7 @@ public class MockProducts : IProducts
         }
     }
 
-    public IEnumerable<Product> ProductsOfCategory(string cat)
+    public List<Product> ProductsOfCategory(string cat)
     {
         var products = new List<Product>();
         foreach (var VARIABLE in AllProducts)

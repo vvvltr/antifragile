@@ -1,0 +1,14 @@
+﻿@model antifragile.ViewModels.UserViewModel
+
+<h2>title</h2>
+<form asp-controller="Profile" asp-action="Login" method="post">
+    <label>email</label>
+    <input type="Email" placeholder="Email" asp-for="Email"/>
+    <label>password</label>
+    <input type="Password" placeholder="Password" asp-for="Password"/>
+    <label>
+        <input type="checkbox" asp-for="KeepLoggedIn"/>Запомнить меня
+    </label>
+    <button type="submit" value="send">send</button>
+</form>
+

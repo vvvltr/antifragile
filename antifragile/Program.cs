@@ -1,6 +1,11 @@
+using System.Security.Claims;
 using antifragile.Data.Interfaces;
 using antifragile.Data.Mocks;
+using antifragile.Data.Models;
 using antifragile.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +13,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IProducts, MockProducts>();
 builder.Services.AddTransient<ICategory, MockCategory>();
+builder.Services.AddTransient<IUser, MockUsers>();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Profile/Login";
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+    });
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
@@ -24,12 +38,18 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+
+/*app.MapGet("/profile/login", (HttpContext ctx) =>
+{
+    ctx.Response.Headers["set-cookie"] = "auth=user:me";
+    return "ok";
+});*/
 
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
-    endpoints.MapControllerRoute("categoryFilter", "Products/{action}/{category?}",   "{controller=Product}/{action}/");
 });
 
 
