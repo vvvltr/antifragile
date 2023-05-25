@@ -4,5 +4,5 @@ namespace antifragile.Data.Interfaces;
 
 public interface IUser
 {
-    IEnumerable<User> AllUsers { get; }
+    IEnumerable<User> AllUsers { get; set; }
 }

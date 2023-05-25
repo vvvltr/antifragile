@@ -6,6 +6,18 @@ namespace antifragile.Data.Mocks;
 
 public class MockUsers : IUser
 {
+    private static IEnumerable<User> allUsers;
+
+    public void RewriteJson()
+    {
+        using (FileStream fs = new FileStream(
+                   @"C:\Users\Владислава\RiderProjects\antifragile\antifragile\Data\Users.json",
+                   FileMode.OpenOrCreate))
+        {
+            var str = JsonSerializer.Serialize(allUsers, JsonSerializerOptions.Default);
+        }
+    }
+    
     public IEnumerable<User> AllUsers
     {
         get
@@ -18,5 +30,11 @@ public class MockUsers : IUser
                 return users;
             }
         }
+        set
+        {
+            allUsers = value;
+            RewriteJson();
+        }
+        
     }
 }

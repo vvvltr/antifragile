@@ -1,6 +1,8 @@
 ﻿using antifragile.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 using antifragile.Data.Interfaces;
 using antifragile.Data.Mocks;
 using antifragile.Data.Models;
@@ -41,17 +43,16 @@ public class ProfileController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Login(UserViewModel userViewModel)
+    public async Task<IActionResult> Login(LoginViewModel loginViewModel)
     {
-        User? user = new List<User>(_users.AllUsers).FirstOrDefault(u => u.Email == userViewModel.Email && u.Password == userViewModel.Password);
+        User? user = new List<User>(_users.AllUsers).FirstOrDefault(u => u.Email == loginViewModel.Email && u.Password == loginViewModel.Password);
         
         if (user!=null)
-        //if ((userViewModel.Email == "vltr@ya.ru") && userViewModel.Password == "123")
         {
             Console.WriteLine("user is not null");
             List<Claim> claims = new List<Claim>()
             {
-                new Claim(ClaimTypes.Name, userViewModel.Email),
+                new Claim(ClaimTypes.Name, loginViewModel.Email),
             };
             ClaimsIdentity claimsIdentity =
                 new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -59,21 +60,64 @@ public class ProfileController : Controller
             AuthenticationProperties authenticationProperties = new AuthenticationProperties()
             {
                 AllowRefresh = true,
-                IsPersistent = userViewModel.KeepLoggedIn
+                IsPersistent = loginViewModel.KeepLoggedIn
             };
 
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                 new ClaimsPrincipal(claimsIdentity), authenticationProperties);
 
             return RedirectToAction("Index", "Profile");
-        } 
+        }
 
         return View();
+    }
+
+    public IActionResult RedirectToRegister()
+    {
+        return RedirectToAction("Register");
+    }
+    
+    public IActionResult RedirectToProfile()
+    {
+        return RedirectToAction("Index");
     }
     
     public async Task<IActionResult> Logout()
     {
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         return RedirectToAction("Login", "Profile");
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Register()
+    {
+        return View();
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> Register(RegisterViewModel rvm)
+    {
+        User newUser = new User()
+        {
+            Email = rvm.Email,
+            PhoneNumber = rvm.PhoneNumber,
+            Password = rvm.Password,
+            Name = rvm.Name,
+            id = _users.AllUsers.Count()
+        };
+
+        foreach (var variable in _users.AllUsers)
+        {
+            if (newUser.Equals(variable))
+            {
+                Console.WriteLine("repited");
+                return View();
+            }
+        }
+        
+        List<User> newUsers = new List<User>(_users.AllUsers);
+        newUsers.Add(newUser);
+        _users.AllUsers = newUsers;
+        return RedirectToAction("Index");
     }
 }

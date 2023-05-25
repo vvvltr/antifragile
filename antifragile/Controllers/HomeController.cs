@@ -18,7 +18,7 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index(UserViewModel uvm)
+    public IActionResult Index(LoginViewModel uvm)
     {
         Console.WriteLine(HttpContext.User.Identity);
         return View(uvm);
