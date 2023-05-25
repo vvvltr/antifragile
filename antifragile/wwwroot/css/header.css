@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+#header-title {
+    color: #FD7A53;
+    font-family: 'Prata', serif;
+}
+
+.nav-link {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    font-family: 'Prata', serif;
+}
+
+.navbar {
+    margin: 0 100px;
+    align-items: center;
+}
+
+.navbar-nav > li {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.left-compartment {
+    text-align: left;
+}
+
+.right-compartment {
+    text-align: right;
+}
+
+.center-compartment {
+    justify-content: center;
+    flex-grow: 1;
+}
+
+#footer {
+    background-color: #FD7A53;
+    padding: 52px 100px;
+}
+
+#footer .nav-link {
+    color: white;
+}
+
+#footer h5 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    text-align:start;
+    font-family: 'Prata', serif;
+}
+
+#footer h4 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    text-align: center;
+    font-family: 'Prata', serif;
+}
+
+#footer #date {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+}
