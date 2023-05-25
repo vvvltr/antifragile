@@ -13,6 +13,7 @@ public class User
     public string PhoneNumber { get; set; }
     [JsonPropertyName("email")]
     public string Email { get; set; }
-    public List<Adress> Adresses;
+    [JsonPropertyName("addresses")]
+    public List<Address> Adresses;
     
 }

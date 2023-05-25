@@ -13,12 +13,20 @@ using Microsoft.AspNetCore.Authorization;
 namespace antifragile.Controllers;
 public class ProfileController : Controller
 {
+    public Address ars = new Address()
+    {
+        Street = "Pushkina, 10",
+        City = "Kazan",
+        Index = "443020"
+    };
     // GET
     public IUser _users;
+    public IAddress _addresses;
 
-    public ProfileController(IUser users)
+    public ProfileController(IUser users, IAddress addresses)
     {
-        _users = users;
+        _users = users;        
+        _addresses = addresses;
     }
     public IActionResult Index()
     {
@@ -27,7 +35,31 @@ public class ProfileController : Controller
         {
             return RedirectToAction("Login", "Profile");
         }
-        return View();
+
+        var identityName = HttpContext.User.Identity.Name;
+        User currentUser = _users.AllUsers.First(u => u.Email == identityName);
+        /*foreach (var VARIABLE in _users.AllUsers)
+        {
+            if (VARIABLE.Email == identityName)
+            {
+                currentUser = VARIABLE;
+            }
+        }*/
+        
+        Console.WriteLine(currentUser.id);
+        currentUser.Adresses = new List<Address>();
+        currentUser.Adresses.Add(ars);
+        ProfileViewModel viewModel = new ProfileViewModel()
+        {
+            Addresses = currentUser.Adresses,
+            Name = currentUser.Name,
+            Email = currentUser.Email,
+            PhoneNumber = currentUser.PhoneNumber,
+            AddressViewModel = new AddressViewModel()
+        };
+
+        
+        return View(viewModel);
     }
 
     [HttpGet]
@@ -45,7 +77,7 @@ public class ProfileController : Controller
     [HttpPost]
     public async Task<IActionResult> Login(LoginViewModel loginViewModel)
     {
-        User? user = new List<User>(_users.AllUsers).FirstOrDefault(u => u.Email == loginViewModel.Email && u.Password == loginViewModel.Password);
+        User? user = _users.AllUsers.FirstOrDefault(u => u.Email == loginViewModel.Email && u.Password == loginViewModel.Password);
         
         if (user!=null)
         {
@@ -110,7 +142,7 @@ public class ProfileController : Controller
         {
             if (newUser.Equals(variable))
             {
-                Console.WriteLine("repited");
+                Console.WriteLine("repeated");
                 return View();
             }
         }
@@ -119,5 +151,20 @@ public class ProfileController : Controller
         newUsers.Add(newUser);
         _users.AllUsers = newUsers;
         return RedirectToAction("Index");
+    }
+
+    [HttpPost]
+    public void AddAddress(AddressViewModel avm)
+    {
+        var identityName = HttpContext.User.Identity.Name;
+        User currentUser = _users.AllUsers.First(u => u.Email == identityName);
+        Address ad = new Address()
+        {
+            City = avm.City,
+            Index = avm.Index,
+            Street = avm.Street,
+            User = currentUser
+        };
+        _addresses.AllAddresses.Add(ad);
     }
 }

@@ -4,7 +4,12 @@
     "name": "vltr",
     "password": "123",
     "phone_num": "89279994043",
-    "email": "vltr@ya.ru"
+    "email": "vltr@ya.ru",
+    "addresses": [{
+      "street": "Пушкина, 10",
+      "city": "Казань",
+      "index": 444322
+    }]
   },
   {
     "id": 2,
