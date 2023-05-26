@@ -1,23 +1,94 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
-:root{
-  --primary-color: #FD7A53;
-  --bg-color: #F5F5F5
+:root {
+    --primary-color: #FD7A53;
+    --bg-color: #F5F5F5
+}
+
+.faq {
+    font-style: normal;
+    font-weight: 400;
+    text-align: start;
+    font-family: 'Prata', serif;
+}
+
+.faq h5 {
+    margin-top: 40px;
+}
+
+.faq p {
+    margin-top: 26px;
+}
+
+.container .faq {
+    margin-top: 60px;
+}
+
+.container .payment {
+    margin-top: 60px;
+}
+
+.payment p {
+    font-style: normal;
+    font-weight: 400;
+    text-align: start;
+    font-family: 'Prata', serif;
+    margin-top: 40px;
+}
+
+.payment h5 {
+    font-style: normal;
+    font-weight: 400;
+    text-align: start;
+    font-family: 'Prata', serif;
+}
+
+.payment li {
+    font-style: normal;
+    font-weight: 400;
+    text-align: start;
+    font-family: 'Prata', serif;
+}
+
+.container .delivery {
+    margin-top: 60px;
+}
+
+.delivery p {
+    font-style: normal;
+    font-weight: 400;
+    text-align: start;
+    font-family: 'Prata', serif;
+    margin-top: 40px;
+}
+
+.delivery h5 {
+    font-style: normal;
+    font-weight: 400;
+    text-align: start;
+    font-family: 'Prata', serif;
+}
+
+.delivery li {
+    font-style: normal;
+    font-weight: 400;
+    text-align: start;
+    font-family: 'Prata', serif;
 }
