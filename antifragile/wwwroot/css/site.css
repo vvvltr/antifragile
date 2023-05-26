@@ -40,3 +40,37 @@ body {
 .container .faq {
     margin-top: 60px;
 }
+
+.container .payment {
+    margin-top: 60px;
+}
+
+.payment h4 {
+    font-style: normal;
+    font-weight: 400;
+    text-align: start;
+    font-family: 'Prata', serif;
+    margin-top: 40px;
+}
+
+.payment h5 {
+    font-style: normal;
+    font-weight: 400;
+    text-align: start;
+    font-family: 'Prata', serif;
+}
+
+.delivery h4 {
+    font-style: normal;
+    font-weight: 400;
+    text-align: start;
+    font-family: 'Prata', serif;
+    margin-top: 40px;
+}
+
+.delivery h5 {
+    font-style: normal;
+    font-weight: 400;
+    text-align: start;
+    font-family: 'Prata', serif;
+}
