@@ -3,19 +3,33 @@
 <div class="d-flex flex-column">
     <div class="d-flex justify-content-between">
         <h1>Каталог</h1>
-        <div class="d-flex flex-row p-5">
-            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Фильтр</a>
-            <div class="dropdown-menu show" aria-labelledby="dropdown01">                        
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Фильтр
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" asp-controller="Catalog" asp-action="Index" asp-route-author="">Все исполнители</a>
+                <a class="dropdown-item" asp-controller="Catalog" asp-action="Index" asp-route-author="Stray Kids">Stray Kids</a>
                 <a class="dropdown-item" asp-controller="Catalog" asp-action="Index" asp-route-author="EXO">EXO</a>
+                <a class="dropdown-item" asp-controller="Catalog" asp-action="Index" asp-route-author="TXT">TXT</a>
                 <a class="dropdown-item" asp-controller="Catalog" asp-action="Index" asp-route-author="BTS">BTS</a>
                 <a class="dropdown-item" asp-controller="Catalog" asp-action="Index" asp-route-author="TWICE">Twice</a>
                 <a class="dropdown-item" asp-controller="Catalog" asp-action="Index" asp-route-author="BLACKPINK">BLACKPINK</a>
             </div>
         </div>
     </div>
-    <div class="d-flex flex-row" style="margin: 15px">
-        <ul class="list-group" style="width: 200px; margin-right: 10%">
+    <div class="d-flex flex-row">
+        <ul class="list-group col-2" style="margin-right: 10px">
             <li class="list-group-item">
                 <a asp-controller="Catalog" asp-action="Index" asp-route-category="">Все товары</a>
             </li>
@@ -38,7 +52,7 @@
                 <a asp-controller="Catalog" asp-action="Index" asp-route-category="lightstick">Лайтстики</a>
             </li>
         </ul>
-        <div class="d-flex row flex-wrap">
+        <div class="d-flex flex-row justify-content-between flex-wrap">
             @foreach (Product prod in Model.allProducts)
             {
                 @Html.Partial("ProductCard", prod)

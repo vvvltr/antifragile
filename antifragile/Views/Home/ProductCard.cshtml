@@ -1,0 +1,14 @@
+﻿@model antifragile.Models.Product
+
+
+<div class="card shadow-sm col-4" style="width: 200px; height: 250px">
+    <img class="card-img-top" src="@Model.PicPath" alt="" ></img>
+    <div class="card-body">
+        <p class="card-text">@Model.Name</p>
+        <p class="card-text">@Model.Price</p>
+        <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-outline-secondary">Добавить в корзину</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+        </div>
+    </div>
+</div>

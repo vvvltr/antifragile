@@ -22,10 +22,10 @@ public class MockProducts : IProducts
         }
     }
 
-    public List<Product> ProductsOfCategory(string cat)
+    public List<Product> ProductsOfCategory(string cat, IEnumerable<Product> prods)
     {
         var products = new List<Product>();
-        foreach (var VARIABLE in AllProducts)
+        foreach (var VARIABLE in prods)
         {
             if (VARIABLE.Category == cat)
             {

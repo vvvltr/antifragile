@@ -14,6 +14,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IProducts, MockProducts>();
 builder.Services.AddTransient<ICategory, MockCategory>();
 builder.Services.AddTransient<IUser, MockUsers>();
+builder.Services.AddTransient<IAddress, MockAddresses>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>

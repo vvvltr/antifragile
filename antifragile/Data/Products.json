@@ -72,6 +72,89 @@
     "category": "album"
   },
   {
+    "id": 7,
+    "name": "GOT7 Breath of Love: Last Piece Album",
+    "price": 2499,
+    "pic_path": "/images/got7_album.jpg",
+    "description": "Pre-order the latest album from GOT7, Breath of Love: Last Piece! Includes hit tracks like 'Breath' and 'Last Piece'.",
+    "material": "",
+    "size": "",
+    "availability": false,
+    "comeback": "Breath of Love: Last Piece",
+    "category": "album"
+  },
+  {
+    "id": 8,
+    "name": "MAMAMOO Travel Album",
+    "price": 2199,
+    "pic_path": "/images/mamamoo_album.jpg",
+    "description": "Get your hands on MAMAMOO's latest album, Travel! Includes hit tracks like 'Dingga' and 'Aya'.",
+    "material": "",
+    "size": "",
+    "availability": true,
+    "comeback": "Travel",
+    "category": "album"
+  },
+  {
+    "id": 9,
+    "name": "Stray Kids Double Knot T-Shirt",
+    "price": 799,
+    "pic_path": "/images/straykids_tshirt.jpg",
+    "description": "Show your love for Stray Kids with this trendy Double Knot T-Shirt. Made from comfortable cotton and available in multiple sizes.",
+    "material": "Cotton",
+    "size": "S, M, L, XL",
+    "availability": true,
+    "comeback": "Double Knot",
+    "category": "clothes"
+  },
+  {
+    "id": 10,
+    "name": "TWICE Feel Special Album",
+    "price": 1999,
+    "pic_path": "/images/twice_album.jpg",
+    "description": "Get your hands on TWICE's Feel Special album! Includes hit tracks like 'Feel Special' and 'Fancy'.",
+    "material": "",
+    "size": "",
+    "availability": true,
+    "comeback": "Feel Special",
+    "category": "album"
+  },
+  {
+    "id": 11,
+    "name": "NCT 127 Neo Zone Album",
+    "price": 1999,
+    "pic_path": "/images/nct127_album.jpg",
+    "description": "Discover NCT 127's Neo Zone album! Includes hit tracks like 'Kick It' and 'Punch'.",
+    "material": "",
+    "size": "",
+    "availability": true,
+    "comeback": "Neo Zone",
+    "category": "album"
+  },
+  {
+    "id": 12,
+    "name": "ITZY Not Shy Album",
+    "price": 2199,
+    "pic_path": "/images/itzy_album.jpg",
+    "description": "Don't miss out on ITZY's latest album, Not Shy! Includes hit tracks like 'Not Shy' and 'Wannabe'.",
+    "material": "",
+    "size": "",
+    "availability": true,
+    "comeback": "Not Shy",
+    "category": "album"
+  },
+  {
+    "id": 13,
+    "name": "BLACKPINK Light Up the Sky Documentary DVD",
+    "price": 1299,
+    "pic_path": "/images/blackpink_dvd.jpg",
+    "description": "Experience the rise of BLACKPINK with the Light Up the Sky documentary DVD! Includes behind-the-scenes footage and interviews.",
+    "material": "",
+    "size": "",
+    "availability": true,
+    "comeback": "N/A"
+  },
+  {
     "id": 15,
     "name": "BTS Love Yourself: Answer Album",
     "price": 2199,
@@ -93,6 +176,66 @@
     "size": "",
     "availability": true,
     "comeback": "The War: The Power of Music",
+    "category": "album"
+  },
+  {
+    "id": 16,
+    "name": "Red Velvet Irene & Seulgi Monster Album",
+    "price": 2199,
+    "pic_path": "/images/redvelvet_album.jpg",
+    "description": "Check out the debut album from Red Velvet's Irene & Seulgi, Monster! Includes hit tracks like 'Monster' and 'Naughty'.",
+    "material": "",
+    "size": "",
+    "availability": true,
+    "comeback": "Monster",
+    "category": "album"
+  },
+  {
+    "id": 17,
+    "name": "ATEEZ Treasure EP.Fin: All to Action Album",
+    "price": 1999,
+    "pic_path": "/images/ateez_album.jpg",
+    "description": "Discover ATEEZ's Treasure EP.Fin: All to Action album! Includes hit tracks like 'Wonderland' and 'Answer'.",
+    "material": "",
+    "size": "",
+    "availability": true,
+    "comeback": "Treasure EP.Fin: All to Action",
+    "category": "album"
+  },
+  {
+    "id": 18,
+    "name": "Stray Kids IN生 (IN LIFE) Album",
+    "price": 1999,
+    "pic_path": "/images/straykids_album2.jpg",
+    "description": "Discover Stray Kids' latest album, IN生 (IN LIFE)! Includes hit tracks like 'Back Door' and 'God's Menu'.",
+    "material": "",
+    "size": "",
+    "availability": true,
+    "comeback": "IN生 (IN LIFE)",
+    "category": "album"
+  },
+  {
+    "id": 19,
+    "name": "ATEEZ Zero: Fever Part.2 Album",
+    "price": 1999,
+    "pic_path": "/images/ateez_album2.jpg",
+    "description": "Add ATEEZ's Zero: Fever Part.2 album to your collection! Includes hit tracks like 'Fireworks (I'm The One)' and 'The Leaders'.",
+    "material": "",
+    "size": "",
+    "availability": true,
+    "comeback": "Zero: Fever Part.2",
+    "category": "album"
+  },
+  {
+    "id": 20,
+    "name": "IU Lilac Album",
+    "price": 2199,
+    "pic_path": "/images/iu_album2.jpg",
+    "description": "Listen to IU's latest album, Lilac! Includes hit tracks like 'Celebrity' and 'Lilac'.",
+    "material": "",
+    "size": "",
+    "availability": true,
+    "comeback": "Lilac",
     "category": "album"
   }
 ]

@@ -1,40 +1,35 @@
-﻿@{
-    ViewBag.Title = "Profile page";
-}
+﻿@using antifragile.Data.Models
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model antifragile.ViewModels.ProfileViewModel
 
 <body>
 <div>
     <div class="d-flex flex-column">
         <div class="h1">Профиль</div>
         <div class="d-flex flex-row justify-content-between">
-            <div class="d-flex flex-column bg-primary col-4">
+            <div class="d-flex flex-column col-4" >
                 <img src="imgs/default_pic.png"/>
-                <h3>Name</h3>
-                <h3>phone</h3>
-                <h3>email</h3>
+                <h3>@Model.Name</h3>
+                <h3>@Model.PhoneNumber</h3>
+                <h3>@Model.Email</h3>
                 <button  asp-controller="Profile" asp-action="Logout"><a asp-controller="Profile" asp-action="Logout">logout</a></button>
-                
             </div>
-            <div class="d-flex flex-column col-8">
-                <div >
-                    <a href="">Adresses</a>
-                    <a href="">Payment</a>
+            <div class="d-flex flex-row col-8">
+                <div class="d-flex flex-column col-4">
+                    @foreach (Address address in Model.Addresses)
+                    {
+                        @Html.Partial("AddressCard", address)
+                    }
                 </div>
-                <div class="d-flex flex-row">
-                    <div class="d-flex flex-column col-4">
-                        <div class="card">
-                            <div class="card-text">adress</div>
-                        </div>
-                        <div class="card">
-                            <div class="card-text">adress</div>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column col-4">
-                        <h2>fff</h2>
-                        <h2>fff</h2>
-                        <h2>fff</h2>
-                    </div>
-                </div>
+                <form class="d-flex flex-column col-4" asp-action="AddAddress" method="post">
+                    <label>Город</label>
+                    <input placeholder="City" asp-for="AddressViewModel.City"/>
+                    <label>Улица</label>
+                    <input  placeholder="Street" asp-for="AddressViewModel.Street"/>
+                    <label>Индекс</label>
+                    <input  placeholder="Index" asp-for="AddressViewModel.Index"/>
+                    <button type="submit" value="send" >Отправить</button>
+                </form>
             </div>
         </div>
     </div>

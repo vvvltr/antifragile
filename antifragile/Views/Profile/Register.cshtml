@@ -1,0 +1,15 @@
+﻿@model antifragile.ViewModels.RegisterViewModel
+
+<div>
+    <form class="d-flex flex-column" asp-controller="Profile" asp-action="Register" method="post">        
+        <label>Имя пользователя</label>
+        <input  placeholder="Name" asp-for="Name"/>        
+        <label>Email</label>
+        <input type="Email" placeholder="Email" asp-for="Email"/>
+        <label>Пароль</label>
+        <input type="Password" placeholder="Password" asp-for="Password"/>
+        <label>Номер телефона</label>
+        <input  placeholder="Phone" asp-for="PhoneNumber"/>
+        <button type="submit" value="send" >Отправить</button>
+    </form>
+</div>

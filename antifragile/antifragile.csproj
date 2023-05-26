@@ -9,11 +9,15 @@
     <ItemGroup>
       <Folder Include="Data\Components" />
       <Folder Include="Views\Products" />
-      <Folder Include="wwwroot\fonts" />
+        <Folder Include="wwwroot\fonts" />
     </ItemGroup>
 
     <ItemGroup>
       <_ContentIncludedByDefault Remove="Views\Catalog\Index.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
 
 </Project>
