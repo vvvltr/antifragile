@@ -78,7 +78,6 @@ public class ProfileController : Controller
     public async Task<IActionResult> Login(LoginViewModel loginViewModel)
     {
         User? user = _users.AllUsers.FirstOrDefault(u => u.Email == loginViewModel.Email && u.Password == loginViewModel.Password);
-        
         if (user!=null)
         {
             Console.WriteLine("user is not null");
@@ -135,9 +134,10 @@ public class ProfileController : Controller
             PhoneNumber = rvm.PhoneNumber,
             Password = rvm.Password,
             Name = rvm.Name,
-            id = _users.AllUsers.Count()
+            id = _users.AllUsers.Count() + 1
         };
 
+        Console.WriteLine(newUser.Name);
         foreach (var variable in _users.AllUsers)
         {
             if (newUser.Equals(variable))
@@ -147,9 +147,8 @@ public class ProfileController : Controller
             }
         }
         
-        List<User> newUsers = new List<User>(_users.AllUsers);
-        newUsers.Add(newUser);
-        _users.AllUsers = newUsers;
+        _users.AddUser(newUser);
+        
         return RedirectToAction("Index");
     }
 

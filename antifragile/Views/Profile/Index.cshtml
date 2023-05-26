@@ -16,10 +16,14 @@
             </div>
             <div class="d-flex flex-row col-8">
                 <div class="d-flex flex-column col-4">
-                    @foreach (Address address in Model.AddressViewModel.Addresses)
+                    @if (Model.AddressViewModel.Addresses != null)
                     {
-                        @Html.PartialAsync("AddressCard", Model.AddressViewModel)
+                        @foreach (Address address in Model.AddressViewModel.Addresses)
+                        {
+                            @Html.PartialAsync("AddressCard", Model.AddressViewModel)
+                        }
                     }
+                    
                 </div>
                 <form class="d-flex flex-column col-4" asp-action="AddAddress" method="post">
                     <label>Город</label>
