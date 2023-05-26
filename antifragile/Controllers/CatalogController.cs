@@ -63,4 +63,19 @@ public class CatalogController : Controller
 
         return prods;
     }
+
+    [HttpGet("Catalog/productPage/{prodId?}")]
+    public IActionResult ProductPage(int prodId)
+    {
+        var product = _products.AllProducts.First(p => p.id == prodId);
+
+        ProductPageViewModel ppvm = new ProductPageViewModel()
+        {
+            Name = product.Name,
+            Price = product.Price,
+            Description = product.Description,
+            Pic = product.PicPath
+        };
+        return View(ppvm);
+    }
 }

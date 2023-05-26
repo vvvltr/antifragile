@@ -1,14 +1,16 @@
 ﻿@model antifragile.Models.Product
 
 
-<div class="card shadow-sm col-4" style="width: 200px; height: 250px">
-    <img class="card-img-top" src="@Model.PicPath" alt="" ></img>
+<div class="card shadow-sm" style="width: 200px; height: auto; margin-right: 5px; margin-bottom: 5px">
+    <img class="card-img-top mw-100" src="imgs/default_pic.png" alt=""></img>
     <div class="card-body">
-        <p class="card-text">@Model.Name</p>
-        <p class="card-text">@Model.Price</p>
+        <p class="card-text" style="font-size: 14px">@Model.Name</p>
+        <p class="card-text" style="color: #FD7A53; font-size: 14px; font-weight: bold">@Model.Price руб.</p>
         <div class="btn-group">
             <button type="button" class="btn btn-sm btn-outline-secondary">Добавить в корзину</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            <button type="button">
+                <i class="bi bi-info-circle"></i>
+            </button>
         </div>
     </div>
 </div>
