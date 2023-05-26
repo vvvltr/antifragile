@@ -45,7 +45,7 @@ body {
     margin-top: 60px;
 }
 
-.payment h4 {
+.payment p {
     font-style: normal;
     font-weight: 400;
     text-align: start;
@@ -60,7 +60,18 @@ body {
     font-family: 'Prata', serif;
 }
 
-.delivery h4 {
+.payment li {
+    font-style: normal;
+    font-weight: 400;
+    text-align: start;
+    font-family: 'Prata', serif;
+}
+
+.container .delivery {
+    margin-top: 60px;
+}
+
+.delivery p {
     font-style: normal;
     font-weight: 400;
     text-align: start;
@@ -69,6 +80,13 @@ body {
 }
 
 .delivery h5 {
+    font-style: normal;
+    font-weight: 400;
+    text-align: start;
+    font-family: 'Prata', serif;
+}
+
+.delivery li {
     font-style: normal;
     font-weight: 400;
     text-align: start;
