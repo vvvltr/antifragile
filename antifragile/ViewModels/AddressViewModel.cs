@@ -4,9 +4,9 @@ namespace antifragile.ViewModels;
 
 public class AddressViewModel
 {
-    public IEnumerable<Address> Addresses;
+    public IEnumerable<Address> Addresses { get; set; }
 
-    public string City;
-    public string Street;
-    public string Index;
+    public string City { get; set; }
+    public string Street { get; set; }
+    public string Index { get; set; }
 }

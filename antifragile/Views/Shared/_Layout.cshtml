@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -8,51 +7,72 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/antifragile.styles.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/header.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"/>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark bor px-4">
-        <a class="navbar-brand" asp-controller="Home" asp-action="Index">Antifragile</a>
-        <div class="collapse navbar-collapse d-flex flex-row justify-content-between" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" asp-controller="Catalog" asp-action="Index" >Каталог</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-controller="FAQ" asp-action="Index">FAQ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " asp-controller="Home" asp-action="Payment">Оплата</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " asp-controller="Home" asp-action="Delivery">Доставка</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav mr-auto">
-                <li>
-                    <a class="nav-item" asp-controller="Cart" asp-action="Index">
-                        Корзина
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-item" asp-controller="Profile" asp-action="Login">
-                        Профиль
-                    </a>
-                </li>
-            </ul>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a id="header-title" class="navbar-brand left-compartment" asp-controller="Home" asp-action="Index">antifragile</a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto center-compartment">
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Catalog" asp-action="Index">Каталог</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="FAQ" asp-action="Index">FAQ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Home" asp-action="Index">Оплата</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Home" asp-action="Index">Доставка</a>
+            </li>
+        </ul>
+        <div class="navbar-nav ml-auto right-compartment">
+            <a class="nav-link" asp-controller="Cart" asp-action="Index">
+                <i class="bi bi-person-circle"></i>
+            </a>
+            <a class="nav-link" asp-controller="Profile" asp-action="Login">
+                <i class="bi bi-cart4"></i>
+            </a>
         </div>
-    </nav>
-<div class="container">
+    </div>
+</nav>
+
+<div class="container" style="padding-bottom: 350px">
     <main role="main" class="pb-3">
         @RenderBody()
     </main>
 </div>
 
-<footer class="border-top footer text-muted">
-    <div class="container bg-secondary">
-        &copy; 2023 - antifragile - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+<footer id="footer" class="footer text-light">
+    <div class="row">
+        <div class="col-md-4">
+            <h5>antifragile</h5>
+        </div>
+        <div class="col-md-auto">
+            <h4>Меню</h4>
+            <a class="nav-link" href="#" style="text-align: start">Каталог</a>
+            <a class="nav-link" href="#">FAQ</a>
+            <a class="nav-link" href="#">Оплата</a>
+            <a class="nav-link" href="#">Доставка</a>
+        </div>
+        <div class="col-md-auto">
+            <h4>Контакты</h4>
+            <a class="nav-link" href="mailto:bibaboba@gmail.com">bibaboba@gmail.com</a>
+            <a class="nav-link">+ 8 800 555 35 35</a>
+        </div>
+        <div class="col-md-auto">
+            <h4>Наши соцсети</h4>
+            <a class="nav-link">
+                <i class="bi bi-instagram"></i>
+            </a>
+        </div>
     </div>
+    <h4 id="date">2023</h4>
 </footer>
+
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>

@@ -1,4 +1,6 @@
-﻿namespace antifragile.Models;
+﻿using antifragile.Data.Models;
+
+namespace antifragile.Models;
 
 
 public class Category

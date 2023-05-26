@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using antifragile.Data.Interfaces;
 using antifragile.Data.Mocks;
 using antifragile.Data.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -11,17 +12,24 @@ namespace antifragile.Controllers;
 
 public class HomeController : Controller
 {
+    public IProducts _products;
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, IProducts products)
     {
         _logger = logger;
+        _products = products;
     }
 
-    public IActionResult Index(LoginViewModel uvm)
+    public IActionResult Index()
     {
-        Console.WriteLine(HttpContext.User.Identity);
-        return View(uvm);
+        HomeViewModel hvm = new HomeViewModel();
+        hvm.LatestProducts = new List<Product>();
+        for (int i = 0; i < 5; i++)
+        {
+            hvm.LatestProducts.Add(_products.AllProducts.ElementAt(i));
+        }
+        return View(hvm);
     }
 
     public IActionResult Privacy()

@@ -19,9 +19,9 @@ public class CatalogController : Controller
     [HttpGet("Catalog/{filter?}/{category}")]
     public IActionResult Index(string author, string category)
     {
-        IEnumerable<Product> prods = new List<Product>();
+        IEnumerable<Product> prods = _products.AllProducts;
         
-        prods = SortByCategory(category);
+        prods = SortByCategory(category, prods);
         prods = SortByAuthor(author, prods);
         
         
@@ -33,15 +33,16 @@ public class CatalogController : Controller
         return View(prodViewMod);
     }
 
-    public IEnumerable<Product> SortByCategory(string category)
+    public IEnumerable<Product> SortByCategory(string category, IEnumerable<Product> prods)
     {
         if (string.IsNullOrEmpty(category))
         {
-            return _products.AllProducts;
+            return prods;
         }
         else
         {
-            return _products.ProductsOfCategory(category);
+            prods = _products.ProductsOfCategory(category, prods);
+            return prods;
         }
     }
 

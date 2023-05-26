@@ -5,7 +5,7 @@ namespace antifragile.Data.Interfaces;
 public interface IProducts
 {
     IEnumerable<Product>? AllProducts { get; }
-    List<Product> ProductsOfCategory(string Category);
+    List<Product> ProductsOfCategory(string Category, IEnumerable<Product> products);
     IEnumerable<Product> FavouriteProducts { get;}
     Product findProduct(int prodName);
 }

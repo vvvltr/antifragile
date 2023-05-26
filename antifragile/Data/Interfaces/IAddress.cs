@@ -6,4 +6,5 @@ public interface IAddress
 {
     public List<Address> AllAddresses { get; set; }
     public List<Address> GetUserAddresses(User user);
+    void AddAddress(Address address);
 }

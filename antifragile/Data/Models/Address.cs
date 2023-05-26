@@ -4,7 +4,8 @@ namespace antifragile.Data.Models;
 
 public class Address
 {
-    public User User { get; set; }
+    [JsonPropertyName("userID")]
+    public int UserID { get; set; }
     [JsonPropertyName("index")]
     public string Index { get; set; }
     [JsonPropertyName("city")]

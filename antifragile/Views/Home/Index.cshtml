@@ -1,6 +1,49 @@
-﻿@model antifragile.ViewModels.LoginViewModel;
+﻿@model antifragile.ViewModels.HomeViewModel
 
-<div class="text-center">
-    <h1 class="display-4">@Model.Email</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="d-flex flex-column">
+        <div class="d-flex flex-row justify-content-between" style="height: 350px">
+            <img src="imgs/home-1.png" class="mh-100"/>
+            <img src="imgs/home-2.png" class="mh-100"/>
+            <img src="imgs/home-3.png" class="mh-100"/>
+        </div>
+        <h1>Latest</h1>
+        <div class="d-flex flex-row justify-content-between">
+            @foreach (Product product in Model.LatestProducts)
+            {
+                @Html.Partial("ProductCard", product)
+                ;
+            }
+            <a asp-controller="Catalog" asp-action="Index"><i class="bi bi-arrow-right-square"></i></a>
+        </div>
+        <h1>Группы и исполнители</h1>
+        <div class="d-flex flex-row justify-content-between">
+            <div class="col-2 h-">
+                <a asp-controller="Catalog" asp-action="Index" asp-route-author="BTS">
+                    <img src="/imgs/bts-card.png" class="mw-100"/>
+                </a>
+            </div>
+            <div class="col-2">
+                <a asp-controller="Catalog" asp-action="Index" asp-route-author="TXT">
+                    <img src="/imgs/txt-card.png" class="mw-100"/>
+                </a>
+            </div>
+            <div class="col-2">
+                <a asp-controller="Catalog" asp-action="Index" asp-route-author="BLACKPINK">
+                    <img src="/imgs/bp-card.png" class="mw-100"/>
+                </a>
+            </div>
+            <div class="col-2">
+                <a asp-controller="Catalog" asp-action="Index" asp-route-author="TWICE">
+                    <img src="/imgs/twice-card.png" class="mw-100"/>
+                </a>
+            </div>
+            <div class="col-2">
+                <a asp-controller="Catalog" asp-action="Index" asp-route-author="Stray Kids">
+                    <img src="/imgs/skz-card.png" class="mw-100"/>
+                </a>
+            </div>
+
+        </div>
+    </div>
 </div>

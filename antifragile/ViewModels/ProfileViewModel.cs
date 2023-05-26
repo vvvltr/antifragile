@@ -8,7 +8,8 @@ public class ProfileViewModel
     public string Email;
     public string Password;
     public string PhoneNumber;
-    public List<Address>? Addresses;
+    
+    public List<Address> Addresses;
 
     public AddressViewModel AddressViewModel;
 }

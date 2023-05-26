@@ -13,13 +13,6 @@ using Microsoft.AspNetCore.Authorization;
 namespace antifragile.Controllers;
 public class ProfileController : Controller
 {
-    public Address ars = new Address()
-    {
-        Street = "Pushkina, 10",
-        City = "Kazan",
-        Index = "443020"
-    };
-    // GET
     public IUser _users;
     public IAddress _addresses;
 
@@ -47,18 +40,14 @@ public class ProfileController : Controller
         }*/
         
         Console.WriteLine(currentUser.id);
-        currentUser.Adresses = new List<Address>();
-        currentUser.Adresses.Add(ars);
+        var userAds = _addresses.GetUserAddresses(currentUser);
         ProfileViewModel viewModel = new ProfileViewModel()
         {
-            Addresses = currentUser.Adresses,
+            Addresses = userAds,
             Name = currentUser.Name,
             Email = currentUser.Email,
             PhoneNumber = currentUser.PhoneNumber,
-            AddressViewModel = new AddressViewModel()
         };
-
-        
         return View(viewModel);
     }
 
@@ -153,17 +142,19 @@ public class ProfileController : Controller
     }
 
     [HttpPost]
-    public void AddAddress(AddressViewModel avm)
+    public IActionResult AddAddress(ProfileViewModel pvm)
     {
         var identityName = HttpContext.User.Identity.Name;
         User currentUser = _users.AllUsers.First(u => u.Email == identityName);
         Address ad = new Address()
         {
-            City = avm.City,
-            Index = avm.Index,
-            Street = avm.Street,
-            User = currentUser
+            City = pvm.AddressViewModel.City,
+            Street = pvm.AddressViewModel.Street, 
+            Index = pvm.AddressViewModel.Index, 
+            UserID = currentUser.id
         };
-        _addresses.AllAddresses.Add(ad);
+        _addresses.AddAddress(ad);
+
+        return RedirectToAction("Index");
     }
 }

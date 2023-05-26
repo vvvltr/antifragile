@@ -9,6 +9,7 @@
     <ItemGroup>
       <Folder Include="Data\Components" />
       <Folder Include="Views\Products" />
+        <Folder Include="wwwroot\fonts" />
     </ItemGroup>
 
     <ItemGroup>
