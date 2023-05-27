@@ -1,12 +1,12 @@
 ﻿@model antifragile.Models.Product
 
-<div class="card shadow-sm" style="width: 200px; height: auto; margin-right: 5px; margin-bottom: 5px">
-    <img class="card-img-top mw-100" src="imgs/default_pic.png" alt=""></img>
+<div class="card shadow-sm" style="width: 200px; height: fit-content; margin-right: 5px; margin-bottom: 5px">
+    <img class="card-img-top mw-100" src="~/imgs/default_pic.png" alt=""></img>
     <div class="card-body">
         <p class="card-text" style="font-size: 14px">@Model.Name</p>
         <p class="card-text" style="color: #FD7A53; font-size: 14px; font-weight: bold">@Model.Price руб.</p>
         <div class="btn-group">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Добавить в корзину</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary"><a asp-controller="Cart" asp-action="AddProductToCart" asp-route-prodId="@Model.id">Добавить в корзину</a></button>
             <a asp-controller="Catalog" asp-action="ProductPage" asp-route-prodId="@Model.id">
                 <i class="bi bi-info-circle"></i>
             </a>

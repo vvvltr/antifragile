@@ -15,11 +15,13 @@ public class ProfileController : Controller
 {
     public IUser _users;
     public IAddress _addresses;
-
-    public ProfileController(IUser users, IAddress addresses)
+    public ICart _cart;
+    
+    public ProfileController(IUser users, IAddress addresses, ICart cart)
     {
         _users = users;        
         _addresses = addresses;
+        _cart = cart;
     }
     public IActionResult Index()
     {
@@ -105,6 +107,7 @@ public class ProfileController : Controller
     public async Task<IActionResult> Logout()
     {
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        _cart.DeleteCart();
         return RedirectToAction("Login", "Profile");
     }
 

@@ -1,1 +1,4 @@
-[{"UserID":2,"Index":"242343","City":"psfp","Street":"dpfdp"},{"UserID":2,"Index":"242343","City":"psfp","Street":"dpfdp"},{"UserID":2,"Index":"242343","City":"psfp","Street":"dpfdp"},{"UserID":1,"Index":"242343","City":"psfp","Street":"dpfdp"}]
+[{"UserID":2,"Index":"242343","City":"Казань","Street":"Курская, 10"},
+  {"UserID":2,"Index":"242343","City":"Казань","Street":"Патриса Лумумбы, 18"},
+  {"UserID":2,"Index":"242343","City":"Санкт-Петербург","Street":"Невская, 6"},
+  {"UserID":1,"Index":"242343","City":"Москва","Street":"Проспект Кутузова, 86"}]

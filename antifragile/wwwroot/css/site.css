@@ -29,6 +29,8 @@ body {
     font-family: 'Prata', serif;
 }
 
+
+
 .faq h5 {
     margin-top: 40px;
 }
@@ -91,4 +93,44 @@ body {
     font-weight: 400;
     text-align: start;
     font-family: 'Prata', serif;
+}
+
+.home {
+     font-style: normal;
+     font-weight: 400;
+     text-align: start;
+     font-family: 'Prata', serif;
+ }
+
+.catalog{
+    font-style: normal;
+    font-weight: 400;
+    text-align: start;
+    font-family: 'Prata', serif;
+}
+
+.profile{
+    font-style: normal;
+    font-weight: 400;
+    text-align: start;
+    font-family: 'Prata', serif;
+}
+
+.prodpage{
+    font-style: normal;
+    font-weight: 400;
+    text-align: start;
+    font-family: 'Prata', serif;
+}
+
+.drpdwn ul li ul.dropdown li{
+    display: block;
+}
+
+.drpdwn ul li ul.dropdown{
+    display: none;
+}
+
+.drpdwn ul li:hover ul.dropdown{
+    display: block;
 }

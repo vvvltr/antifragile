@@ -1,63 +1,57 @@
 ﻿@using antifragile.ViewModels
 
-<div class="d-flex flex-column">
-    <div class="d-flex justify-content-between">
-        <h1>Каталог</h1>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown button
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
+<div class="container catalog">
+    <div class="d-flex flex-column">
+        <div class="d-flex justify-content-between">
+            <h1>Каталог</h1>
+            
         </div>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Фильтр
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" asp-controller="Catalog" asp-action="Index" asp-route-author="">Все исполнители</a>
-                <a class="dropdown-item" asp-controller="Catalog" asp-action="Index" asp-route-author="Stray Kids">Stray Kids</a>
-                <a class="dropdown-item" asp-controller="Catalog" asp-action="Index" asp-route-author="EXO">EXO</a>
-                <a class="dropdown-item" asp-controller="Catalog" asp-action="Index" asp-route-author="TXT">TXT</a>
-                <a class="dropdown-item" asp-controller="Catalog" asp-action="Index" asp-route-author="BTS">BTS</a>
-                <a class="dropdown-item" asp-controller="Catalog" asp-action="Index" asp-route-author="TWICE">Twice</a>
-                <a class="dropdown-item" asp-controller="Catalog" asp-action="Index" asp-route-author="BLACKPINK">BLACKPINK</a>
+        <div class="d-flex flex-row">
+            <div class="d-flex flex-column col-2" style="margin-right: 10px">
+                <h4>Фильтр по категориям</h4>
+                <ul class="list-group ">
+                    <li class="list-group-item">
+                        <a asp-controller="Catalog" asp-action="Index" asp-route-category="">Все товары</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a asp-controller="Catalog" asp-action="Index" asp-route-category="album">альбомы</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a asp-controller="Catalog" asp-action="Index" asp-route-category="pack">K-POP паки</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a asp-controller="Catalog" asp-action="Index" asp-route-category="box">K-POP box'ы</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a asp-controller="Catalog" asp-action="Index" asp-route-category="pack">Карточки</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a asp-controller="Catalog" asp-action="Index" asp-route-category="clothes">Одежда</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a asp-controller="Catalog" asp-action="Index" asp-route-category="lightstick">Лайтстики</a>
+                    </li>
+                </ul>
+                <h4>Фильтр по исполнителям</h4>
+                <ul class="list-group">
+                    <li class="list-group-item"><a asp-controller="Catalog" asp-action="Index" asp-route-author="">Все исполнители</a></li>
+                    <li class="list-group-item"><a asp-controller="Catalog" asp-action="Index" asp-route-author="Stray Kids">Stray Kids</a></li>
+                    <li class="list-group-item"><a asp-controller="Catalog" asp-action="Index" asp-route-author="EXO">EXO</a></li>
+                    <li class="list-group-item"><a asp-controller="Catalog" asp-action="Index" asp-route-author="TXT">TXT</a></li>
+                    <li class="list-group-item"><a asp-controller="Catalog" asp-action="Index" asp-route-author="BTS">BTS</a></li>
+                    <li class="list-group-item"><a asp-controller="Catalog" asp-action="Index" asp-route-author="TWICE">Twice</a></li>
+                    <li class="list-group-item"><a asp-controller="Catalog" asp-action="Index" asp-route-author="BLACKPINK">BLACKPINK</a></li>
+                </ul>
+            </div>
+            
+            <div class="d-flex flex-row justify-content-between flex-wrap">
+                @foreach (Product prod in Model.allProducts)
+                {
+                    @Html.Partial("ProductCard", prod)
+                }
             </div>
         </div>
     </div>
-    <div class="d-flex flex-row">
-        <ul class="list-group col-2" style="margin-right: 10px">
-            <li class="list-group-item">
-                <a asp-controller="Catalog" asp-action="Index" asp-route-category="">Все товары</a>
-            </li>
-            <li class="list-group-item">
-                <a asp-controller="Catalog" asp-action="Index" asp-route-category="album">альбомы</a>
-            </li>
-            <li class="list-group-item">
-                <a asp-controller="Catalog" asp-action="Index" asp-route-category="pack">K-POP паки</a>
-            </li>
-            <li class="list-group-item">
-                <a asp-controller="Catalog" asp-action="Index" asp-route-category="box">K-POP box'ы</a>
-            </li>
-            <li class="list-group-item">
-                <a asp-controller="Catalog" asp-action="Index" asp-route-category="pack">Карточки</a>
-            </li>
-            <li class="list-group-item">
-                <a asp-controller="Catalog" asp-action="Index" asp-route-category="clothes">Одежда</a>
-            </li>
-            <li class="list-group-item">
-                <a asp-controller="Catalog" asp-action="Index" asp-route-category="lightstick">Лайтстики</a>
-            </li>
-        </ul>
-        <div class="d-flex flex-row justify-content-between flex-wrap">
-            @foreach (Product prod in Model.allProducts)
-            {
-                @Html.Partial("ProductCard", prod)
-            }
-        </div>
-    </div>
 </div>
+
 

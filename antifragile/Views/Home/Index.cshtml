@@ -1,14 +1,14 @@
 ﻿@model antifragile.ViewModels.HomeViewModel
 
-<div class="container">
+<div class="container home">
     <div class="d-flex flex-column">
-        <div class="d-flex flex-row justify-content-between" style="height: 350px">
+        <div class="d-flex flex-row justify-content-between mb-4" style="height: 350px">
             <img src="imgs/home-1.png" class="mh-100"/>
             <img src="imgs/home-2.png" class="mh-100"/>
             <img src="imgs/home-3.png" class="mh-100"/>
         </div>
-        <h1>Latest</h1>
-        <div class="d-flex flex-row justify-content-between">
+        <h3 class="mb-1">Последние поступления</h3>
+        <div class="d-flex flex-row justify-content-between align-content-center mb-4">
             @foreach (Product product in Model.LatestProducts)
             {
                 @Html.Partial("ProductCard", product)
@@ -16,7 +16,7 @@
             }
             <a asp-controller="Catalog" asp-action="Index"><i class="bi bi-arrow-right-square"></i></a>
         </div>
-        <h1>Группы и исполнители</h1>
+        <h3 class="mb-1">Группы и исполнители</h3>
         <div class="d-flex flex-row justify-content-between">
             <div class="col-2 h-">
                 <a asp-controller="Catalog" asp-action="Index" asp-route-author="BTS">
@@ -42,6 +42,9 @@
                 <a asp-controller="Catalog" asp-action="Index" asp-route-author="Stray Kids">
                     <img src="/imgs/skz-card.png" class="mw-100"/>
                 </a>
+            </div>
+            <div>
+                <a asp-controller="Catalog" asp-action="Index"><i class="bi bi-arrow-right-square"></i></a>
             </div>
 
         </div>

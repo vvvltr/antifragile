@@ -32,10 +32,10 @@
         </ul>
         <div class="navbar-nav ml-auto right-compartment">
             <a class="nav-link" asp-controller="Cart" asp-action="Index">
-                <i class="bi bi-person-circle"></i>
+                <i class="bi bi-cart4"></i>
             </a>
             <a class="nav-link" asp-controller="Profile" asp-action="Login">
-                <i class="bi bi-cart4"></i>
+                <i class="bi bi-person-circle"></i>
             </a>
         </div>
     </div>
@@ -76,6 +76,7 @@
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
 @await RenderSectionAsync("Scripts", required: false)
 </body>

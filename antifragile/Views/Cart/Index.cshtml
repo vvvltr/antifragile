@@ -1,1 +1,33 @@
-﻿<h2> cart page </h2>
+﻿@model antifragile.ViewModels.CartViewModel
+
+<h2> cart page </h2>
+<div class="container">
+    <div class="d-flex flex-column">
+        <div class="d-flex flex-row justify-content-between">
+            <p class="fs-6 fw-bolder col-4">Товар</p>
+            <p class="fs-6 col-4">Количество</p>
+            <p class="fs-6 fw-bold col-4" style="color: #FD7A53">Цена</p>
+        </div>
+        <hr/>
+        @if (Model.cartProducts != null)
+        {
+            @foreach (Product prod in Model.cartProducts)
+                    {
+                        <div class="d-flex flex-row col-12">
+                            <div class="col-4">
+                                <p class="fs-6 fw-bolder">@prod.Name</p>  
+                            </div>              
+                            <div class="col-4">
+                                <p class="fs-6">1 шт.</p>  
+                            </div>
+                            <div class="col-4">
+                                <p class="fs-6 fw-bolder" style="color: #FD7A53">@prod.Price</p>  
+                            </div>
+                        </div>
+                        <hr/>
+                    }
+        }
+        
+    </div>
+    <button>К оплате</button>
+</div>
